@@ -1,22 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worinicity</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worinicity - Game Start</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rgbText 4s linear infinite;
+    }
+
+    p.animated-text {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 30px 0;
+      color: #ccc;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    .btn-play {
+      padding: 16px 32px;
+      font-size: 1.5rem;
+      background: #0ff;
+      color: #000;
+      border: none;
+      border-radius: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      animation: pulse 2s infinite;
+      transition: all 0.3s ease;
+    }
+
+    .btn-play:hover {
+      transform: scale(1.1);
+      background: #00ffffbb;
+    }
+
+    @keyframes rgbText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+      50% { box-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .btn-play { font-size: 1.2rem; padding: 12px 24px; }
+      p.animated-text { font-size: 0.95rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Worinicity 🌍</h1>
-    <canvas id="gameCanvas" width="800" height="400"></canvas>
 
-    <div id="donate">
-        <p>¿Te gustó el juego? Apóyame con una donación 💜</p>
-        <strong>Yape: 912725938 - AURELIA ROJAS</strong>
-        <h1>NIVEL 5 = medio pro</h1>
-        <h3>NIVEL 100 = MEGA pro, gana 1 sol</h3>
-    </div>
+  <h1>🎮 WORINICITY</h1>
+  <p class="animated-text">
+    Este juego fue creado para eliminar el estrés en las personas,<br>
+    proyecto de ciencias para Yugoslavia,<br>
+    usando la tecnología a nuestro favor.
+  </p>
 
-    <script src="game.js"></script>
+  <button class="btn-play" onclick="window.location.href='https://kevinbrayan12.github.io/WorinicitySYTIOWEB/'">
+    🎮 ¡JUGAR YA!
+  </button>
+
 </body>
 </html>
